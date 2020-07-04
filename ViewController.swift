@@ -28,9 +28,15 @@ class ViewController: UIViewController {
         
         if(count == 10)
         {
-            count = 10
             performSegue(withIdentifier: "next", sender: nil)
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let nextVC = segue.destination as! NextViewController
+        
+        nextVC.count2 = count
     }
 
 }
