@@ -28,7 +28,14 @@ class ViewController: UIViewController {
         
         if(count == 10)
         {
-            performSegue(withIdentifier: "next", sender: nil)
+//            performSegue(withIdentifier: "next", sender: nil)
+//            let nextVC = segue.destination as! NextViewController
+            let nextVC = storyboard?.instantiateViewController(identifier: "next") as! NextViewController
+            
+            nextVC.count2 = count
+            
+            navigationController?.pushViewController(nextVC, animated: true)
+            
         }
     }
     
